@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<form class="form-horizontal">
+<form class="form-horizontal" method="post" action="{{ url('users-save') }}">
   <fieldset>
 
     <!-- Titulo -->
@@ -54,7 +54,7 @@
     <div class="form-group">
       <div class="col-md-8">
         <div class="pull-right">
-          <button class="btn btn-primary">Guardar</button>
+          <button class="btn btn-primary" type="submit">Guardar</button>
           <button class="btn btn-primary">Cancelar</button>
         </div>
       </div>
