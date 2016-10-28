@@ -1,3 +1,5 @@
+
+
 {% extends 'layout.html.twig' %}
 
 {% block title 'Usuarios' %}
@@ -8,18 +10,18 @@
 	<div class="row">
 
     <div class="col-md-12">
-      <legend>LIsta de Usuarios</legend>
+      <legend>Lista de Salones</legend>
 
       <div class="table-responsive">
 
         <table id="mytable" class="table table-bordred table-striped">
 
           <thead>
+            <th>Id</th>
             <th>Nombre</th>
-            <th>Apellido</th>
+             <th>Edificio</th>
             <th>Dirección</th>
-            <th>Email</th>
-            <th>Teléfono</th>
+            <th>Capacidad</th>
 
             <th>Editar</th>
             <th>Borrar</th>
@@ -27,16 +29,16 @@
 
           <tbody>
 
-            {% for index, u in users %}
+            {% for index, s in salones %}
             <tr>
-              <td>{{ u.nombre }}</td>
-              <td>{{ u.apellido }}</td>
-              <td>{{ u.direccion }}</td>
-              <td>{{ u.email }}</td>
-              <td>{{ u.telefono }}</td>
+              <td>{{ s.id }}</td>
+              <td>{{ s.nombre }}</td>
+              <td>{{ s.edificio }}</td>
+              <td>{{ s.direccion }}</td>
+              <td>{{ s.capacidad }}</td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Editar">
-                  <a href="{{ url('users-edit', { index: index }) }}">
+                  <a href="{{ url('salones-edit', { index: index }) }}">
                     <button class="btn btn-primary btn-xs" data-title="Editar" >
                       <i class="glyphicon glyphicon-pencil"></i>
                     </button>
@@ -45,7 +47,7 @@
               </td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Borrar">
-                  <a href="{{ url('users-delete', { index: index }) }}">
+                  <a href="{{ url('salones-delete', { index: index }) }}">
                     <button class="btn btn-danger btn-xs" data-title="Borrar">
                       <i class="glyphicon glyphicon-trash"></i>
                     </button>

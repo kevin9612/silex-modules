@@ -41,8 +41,20 @@
               Usuarios
             <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('users-edit') }}">Crear nuevo</a></li>
+              <li><a href="{{ url('users-new') }}">Crear nuevo</a></li>
 							<li><a href="{{ url('users-list') }}">Ver todos</a></li>
+						</ul>
+          </li>
+			  </ul>
+
+           <ul class="nav navbar-nav navbar-left">
+          <li class="dropdown">
+            <a href="#"  class="dropdown-toggle" data-toggle="dropdown">
+              Salones
+            <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+              <li><a href="{{ url('salones-new') }}">Crear nuevo</a></li>
+							<li><a href="{{ url('salones-list') }}">Ver todos</a></li>
 						</ul>
           </li>
 			  </ul>

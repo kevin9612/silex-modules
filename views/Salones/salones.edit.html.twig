@@ -1,60 +1,60 @@
 {% extends 'layout.html.twig' %}
 
-{% block title 'Editar Usuario' %}
+{% block title 'Editar Salones' %}
 
 {% block body %}
 
-<form class="form-horizontal" method="post" action="{{ url('users-save') }}">
+<form class="form-horizontal" method="post" action="{{ url('salones-save') }}">
 
   <input type="hidden" name="index" value="{{ index }}">
 
   <fieldset>
 
     <!-- Titulo -->
-    <legend>Crear o Editar Usuario</legend>
+    <legend>Crear o Editar Salon</legend>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Id</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control input-md"
+            name="id" value="{{ salon_to_edit.id }}"
+            placeholder="id salon" required="">
+      </div>
+    </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="textinput">Nombre</label>
       <div class="col-md-4">
         <input type="text" class="form-control input-md"
-            name="nombre" value="{{ user_to_edit.nombre }}"
-            placeholder="nombre del usuario" required="">
+            name="nombre" value="{{ salon_to_edit.nombre }}"
+            placeholder="nombre del salon" required="">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Apellido</label>
+      <label class="col-md-4 control-label" for="textinput">Edificio</label>
       <div class="col-md-4">
         <input type="text" class="form-control input-md"
-            name="apellido" value="{{ user_to_edit.apellido }}"
-            placeholder="apellido del usuario" required="">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Dirección</label>
-      <div class="col-md-4">
-        <input type="text" class="form-control input-md"
-            name="direccion" value="{{ user_to_edit.direccion }}"
+            name="edificio" value="{{ salon_to_edit.edificio }}"
             placeholder="dirección del usuario" required="">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Email</label>
+      <label class="col-md-4 control-label" for="textinput">Direccion</label>
       <div class="col-md-4">
         <input type="text" class="form-control input-md"
-            name="email" value="{{ user_to_edit.email }}"
-            placeholder="correo electrónico" required="">
+            name="direccion" value="{{ salon_to_edit.direccion }}"
+            placeholder="direccion" required="">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Teléfono</label>
+      <label class="col-md-4 control-label" for="textinput">Capacidad</label>
       <div class="col-md-4">
         <input type="text" class="form-control input-md"
-            name="telefono" value="{{ user_to_edit.telefono}}"
-            placeholder="teléfono del usuario" required="">
+            name="capacidad" value="{{ salon_to_edit.capacidad }}"
+            placeholder="Capacidad" required="">
       </div>
     </div>
 
@@ -63,7 +63,7 @@
       <div class="col-md-8">
         <div class="pull-right">
           <button class="btn btn-primary" type="submit">Guardar</button>
-          <a href="{{ url('users-list') }}>" >
+            <a href="{{ url('salones-list') }}>" >
             <button class="btn btn-primary">Cancelar</button>
           </a>
         </div>
